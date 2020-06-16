@@ -1,5 +1,7 @@
 import pandas as pd
 import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
 
 ad_data = pd.read_csv('./data/advertising.csv')
 ad_data.head()
@@ -27,3 +29,18 @@ sns.jointplot(
 )
 
 sns.pairplot(data=ad_data, hue='Clicked on Ad')
+
+sns.heatmap(
+    data=ad_data.isnull(),
+    yticklabels=False,
+    cbar=False,
+    cmap='viridis'
+)
+
+predictors = [
+    'Age',
+    'Area Income',
+    'Daily Internet Usage',
+    'Daily Time Spent on Site'
+]
+X = ad_data[[]]
