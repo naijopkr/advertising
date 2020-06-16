@@ -2,7 +2,7 @@ import pandas as pd
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import classification_report
 
 ad_data = pd.read_csv('./data/advertising.csv')
 ad_data.head()
@@ -60,4 +60,3 @@ logmodel.fit(X_train, y_train)
 y_pred = logmodel.predict(X_test)
 
 print(classification_report(y_test, y_pred))
-print(confusion_matrix(y_test, y_pred))
